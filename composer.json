@@ -1,0 +1,33 @@
+{
+    "name": "slowlyo/owl-menu-search",
+    "alias": "菜单搜索",
+    "description": "OwlAdmin扩展: 顶部栏-菜单搜索",
+    "type": "library",
+    "version": "1.0.0",
+    "keywords": ["owl-admin", "extension", "menu search"],
+    "homepage": "https://github.com/slowlyo/owl-menu-search",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Slowlyo",
+            "email": "slowlyo_email_qq.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.0",
+        "slowlyo/owl-admin": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Slowlyo\\OwlMenuSearch\\": "src/"
+        }
+    },
+    "extra": {
+        "owl-admin": "Slowlyo\\OwlMenuSearch\\OwlMenuSearchServiceProvider",
+        "laravel": {
+            "providers": [
+                "Slowlyo\\OwlMenuSearch\\OwlMenuSearchServiceProvider"
+            ]
+        }
+    }
+}
