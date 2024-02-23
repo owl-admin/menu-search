@@ -3,7 +3,6 @@
     "alias": "菜单搜索",
     "description": "OwlAdmin扩展: 顶部栏-菜单搜索",
     "type": "library",
-    "version": "1.0.0",
     "keywords": ["owl-admin", "extension", "menu search"],
     "homepage": "https://github.com/slowlyo/owl-menu-search",
     "license": "MIT",
