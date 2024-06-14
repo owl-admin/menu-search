@@ -17,7 +17,7 @@ class OwlMenuSearchController extends AdminController
 
         // 缓存 60s 避免频繁查库
         $list = cache()->remember('admin_menu_search', 60, function () {
-            $menus = Admin::adminMenuModel()::query()->where('visible', 1)->orderBy('order')->get()->toArray();
+            $menus = Admin::adminMenuModel()::query()->where('visible', 1)->orderBy('custom_order')->get()->toArray();
 
             return $this->format(array2tree($menus));
         });
