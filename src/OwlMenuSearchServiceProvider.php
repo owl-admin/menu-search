@@ -2,16 +2,27 @@
 
 namespace Slowlyo\OwlMenuSearch;
 
-use Slowlyo\OwlAdmin\Admin;
+use Slowlyo\OwlAdmin\Extend\Extension;
 use Slowlyo\OwlAdmin\Extend\ServiceProvider;
+use Slowlyo\OwlMenuSearch\Http\Middleware\OwlMenuSearchMiddleware;
 
 class OwlMenuSearchServiceProvider extends ServiceProvider
 {
+    protected $exceptRoutes = [
+        'permission' => ['menu-search'],
+    ];
+
+    protected $middleware = [
+        OwlMenuSearchMiddleware::class,
+    ];
+
     public function boot()
     {
         parent::boot();
 
-        Admin::prependNav($this->searchBtn());
+        if (!Extension::tableExists() || $this->disabled()) {
+            return;
+        }
     }
 
     public function searchBtn()
